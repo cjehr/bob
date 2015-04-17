@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<title>Bob Ross Decison Engine</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var painting = ["MOUNTAINS", "SKY", "WATER", "TREES"];
+			var randomRoss = Math.floor((Math.random() * 3) + 1);
+			var introText = '<h1 class="text">Have a decison to make? Let Bob Ross guide you. Bob Ross will be painting either mountains, sky, water, or trees.</h1>';
+			var origPic = '<img class="image" src="./img/ross' + randomRoss + '.png" />';
+			$('.replace').html(
+					introText + origPic
+				);			
+
+			//$('.replace').html(function() {
+			//	return '<img class="image" src="./img/ross' + randomRoss + '.png" />';
+			//});
+			$('#rossision').click(function(){
+				var randomActivity = Math.floor(Math.random() * 4);
+				var randomImage = Math.floor((Math.random() * 3) + 1);
+				var text = '<h1 class="display">' + painting[randomActivity] + '</h1>';
+				var image = '<img class="image" src="./img/' + painting[randomActivity] + randomImage + '.png" />';
+
+				$('.replace').html(
+					text + image
+					);
+			});
+			//$('#reset').click(function(){
+			//	var randomRoss = Math.floor((Math.random() * 3) + 1);
+
+			//	$('.replace').html(function() {
+			//		return '<img class="image" src="./img/ross' + randomRoss + '.png" />';
+			//	});
+			//});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="header">
+		<h1>The Bob Ross Decision Engine</h1>
+	</div>
+	<div class="content">
+		
+		<!--<div class="activity"></div>-->
+		<div class="replace">
+			<!--<h1 class= "display">Have a decison to make? Let Bob Ross guide you. Bob Ross will be painting either mountains, sky, water, or trees.</h1>
+			<img class="image" src="./img/ross1.png" />-->
+		</div>
+		<div class="buttons">
+			<button id="rossision">Rossision</button>
+			<!--<button id="reset">Reset</button>-->
+		</div>
+	</div>
+	<div class="footer">
+		<p>Thanks to <a href="http://en.wikipedia.org/wiki/Peep_Show_%28TV_series%29">Peep Show</a> for the inspiration. Watch the scene on YouTube at <a href="https://www.youtube.com/watch?v=bxO_wp0AQqY">https://www.youtube.com/watch?v=bxO_wp0AQqY</a></p>
+	</div>
+</body>	
+</html>
