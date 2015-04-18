@@ -7,6 +7,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var painting = ["MOUNTAINS", "SKY", "WATER", "TREES"];
+			var textStyle = ['<h1 class="display" style="color:#545454">', '<h1 class="display" style="color:#0000FF">', '<h1 class="display" style="color:#000080">', '<h1 class="display" style="color:#00B200">'];
 			var randomRoss = Math.floor((Math.random() * 3) + 1);
 			var introText = '<h1 class="text">Have a decison to make? Let Bob Ross guide you. Bob Ross will be painting either mountains, sky, water, or trees.</h1>';
 			var origPic = '<img class="image" src="./img/ross' + randomRoss + '.png" />';
@@ -16,7 +17,8 @@
 			$('#rossision').click(function(){
 				var randomActivity = Math.floor(Math.random() * 4);
 				var randomImage = Math.floor((Math.random() * 3) + 1);
-				var text = '<h1 class="display">' + painting[randomActivity] + '</h1>';
+				var text = painting[randomActivity];
+				var text = textStyle[randomActivity] + painting[randomActivity] + '</h1>';
 				var image = '<img class="image" src="./img/' + painting[randomActivity] + randomImage + '.png" />';
 				$('.replace').html(
 					text + image
